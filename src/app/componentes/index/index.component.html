@@ -1,0 +1,4 @@
+<app-header></app-header>
+<app-body-index *ngIf="this.loginService.tipoUser() != 'abogado'"></app-body-index>
+<app-body-index-abogado *ngIf="this.loginService.tipoUser() == 'abogado'"></app-body-index-abogado>
+<app-footer-account></app-footer-account>

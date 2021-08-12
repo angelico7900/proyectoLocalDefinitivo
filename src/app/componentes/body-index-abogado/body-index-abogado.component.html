@@ -1,0 +1,20 @@
+<div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-7 col-sm-12 mx-auto mt-4" *ngIf="!this.pagado">
+            <div><h2 class="text-center">Debe abonar la mensualidad de 20€</h2></div>
+            <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+        </div>
+        <div class="col-sm-12" *ngIf="this.pagado">
+            <div id="pagado" class="mx-auto">
+                <h1 class="d-inline">Mensualidad abonada <i class="far fa-check-circle ms-2"></i></h1>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div id="trust">
+                <h5>Gracias por confiar en nuestra página web ante cualquier sugerencia o cuestión no dude en ponerse en contacto con <a routerLink="/soporte">nosotros</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

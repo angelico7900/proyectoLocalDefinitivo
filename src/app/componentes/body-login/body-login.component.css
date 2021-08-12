@@ -1,0 +1,67 @@
+input[type='submit']{
+    color: #131720;
+    background-color: #F2F2F2;
+    border: 1px solid #131720;
+}
+input[type='submit']:hover {
+    border: 2px solid #B99D76;
+    background: white;
+    color: #B99D76;
+    font-weight: 600;
+}
+span{
+    position: absolute;
+}
+#body{
+    margin-bottom: 80px;
+}
+
+.form-label {
+    margin-bottom: .5rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.3em;
+}
+
+h1{
+    font-size: 3em;
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.ff{
+    font-family: 'Source Sans Pro', sans-serif;
+    
+}
+
+.row{
+    padding: 2em 0 4em 0;
+}
+
+.form-control {
+    border-radius: 0px;
+    border:none;
+    border-bottom:1px solid black;
+}
+
+.form-control:focus{
+    box-shadow: none !important;
+    background-color: #F2F2F2;
+}
+
+
+
+form>div {
+    line-height:2.5em;
+}
+
+.form-select:focus {
+    border-color: #b99d76 !important;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-select {
+    border-color: #b99d76 !important;
+}

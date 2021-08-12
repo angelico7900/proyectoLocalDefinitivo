@@ -1,0 +1,37 @@
+footer{
+    background-color: #253042;
+    padding: 0.5rem;
+}
+footer span{
+    font-size: 1.7rem;
+    font-family: 'Oxygen', sans-serif;
+}
+span.fw-bold {
+    color: #F2F2F2;
+}
+
+.row.fut{
+    padding-top: 1.5em;
+}
+
+.row > div{
+    width: 50% !important;
+    justify-content: baseline;
+}
+footer{
+    position:fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    margin-top: 60px;
+}
+a{
+    color: #B99D76;
+    text-decoration: none;
+    font-family: 'Oxygen', sans-serif;
+}
+@media only screen and (max-width:767px){
+    footer span{
+        font-size: 1rem;
+    }
+}

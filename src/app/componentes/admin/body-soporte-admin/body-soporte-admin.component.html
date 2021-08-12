@@ -1,0 +1,36 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form method="POST" [formGroup]="formulario" (ngSubmit)="this.logg()">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre de administrador</label>
+                    <input type="email" class="form-control" id="correo" 
+                    aria-describedby="emailHelp" name="nombre"
+                    formControlName="nombre">
+                    <div *ngIf="nombreForm?.errors &&
+                    nombreForm?.touched" class="letraPequenna">
+                       Nombre requerido
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="contra" class="form-label">Contraseña</label>
+                    <input type="email" class="form-control" id="contra" 
+                    aria-describedby="emailHelp" name="contra"
+                    formControlName="nombre">
+                    <div *ngIf="contrasenaForm?.errors &&
+                    contrasenaForm?.touched" class="letraPequenna">
+                       Contraseña requerida
+                    </div>
+                </div>
+                <div *ngIf="this.fail" class="letraPequenna">
+                   Nombre o contraseña incorrectos
+                </div>
+                <div class="mb-3">
+                    <div class="d-grid gap-2">
+                        <input type="submit" class="btn btn-outline-primary" value="Iniciar Sesión">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

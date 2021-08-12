@@ -1,0 +1,127 @@
+<div class="imagenB">
+
+  <div class="col-12 bannerA"><div class="text-center"><h2>Mis Datos</h2></div></div>
+
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+     
+        <div class="col-md-6 col-sm-12">
+          <label for="nombre">Nombre</label>
+          <input class="form-control" [value]="this.nombre" [disabled]=true id="nombre">
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <label for="apellidos">Apellidos</label>
+          <input class="form-control" [value]="this.apellidos" [disabled]=true id="apellidos">
+        </div>
+    </div>
+    <hr>
+    <form method="POST" [formGroup]="formulario" id="formulario" (ngSubmit)="modificarContra()">
+  <div class="row mt-3">
+    <div class="col-12 mb-2"><div class="text-center"><h3>Modificar contraseña</h3></div></div>
+        <div class="col-md-4 col-sm-12">
+            <label for="conActual">Contraseña actual:</label>
+            <input id="conActual" formControlName="contrasenaActual" type="password" class="ms-1 form-control">
+            <div *ngIf="contrasenaForm?.errors &&
+                contrasenaForm?.touched" class="letraPequenna text-center">
+                  Campo obligatorio
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+           <label for="conActual">Nueva contraseña:</label>
+           <input id="nuevaCon" formControlName="contrasenaNueva" type="password" class="ms-1 form-control">
+           <div *ngIf="contrasenaNuevaForm?.errors &&
+           contrasenaNuevaForm?.touched" class="letraPequenna text-center">
+              Campo obligatorio
+       </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+           <label for="repCon">Repetir contraseña:</label>
+           <input id="conActual" formControlName="contrasenaNueva2" type="password" class="ms-1 form-control">
+           <div *ngIf="contrasenaNuevaForm?.value != contrasenaNueva2Form.value &&
+                contrasenaNueva2Form?.touched" class="letraPequenna text-center">
+                   Contraseñas no coinciden
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 mt-5 mx-auto">
+            <div class="d-grid gap-2">
+                <input type="submit" class="btn btn-outline-primary" [disabled]="this.formulario.invalid" value="Cambiar contraseña">
+            </div>
+        </div>
+  </div>
+</form>
+<hr>
+  <form method="POST" [formGroup]="formulario2" (ngSubmit)="this.enviarCorreo(correoForm?.value)">
+    <div class="row mt-5">
+      <div class="col-12 mb-2">
+        <div class="text-center"><h3>Modificar Correo</h3></div>
+      </div>
+      <div class="col-md-4 col-sm-12 mx-auto espacio">
+        <label for="correo">Nuevo correo:</label>
+        <div class="d-grid gap-2">
+          <input formControlName="correo" class="form-control" id="correo">
+        </div>
+        <div  class="letraPequenna" *ngIf="correoForm?.hasError('required')
+        && correoForm?.touched">
+        Correo obligatoria
+      </div>
+      <div  class="letraPequenna" *ngIf="correoForm?.hasError('email')
+        && correoForm?.touched">
+        No es un correo electrónico
+      </div>
+      </div>
+      <br>
+      <div class="col-md-4 col-sm-12 pt-4 mx-auto">
+        <div class="d-grid gap-2 espacio">
+          <input type="submit" value="Cambiar correo" class="btn btn-outline-primary" [disabled]="this.formulario2.invalid">
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr>
+  <form method="POST" [formGroup]="formulario3"  (ngSubmit)="this.enviarImagen()" *ngIf="this.login.tipoUser() == 'abogado'">
+    <div class="row">
+      <div class="col-12"><div class="text-center">
+        <h3>Modificar foto de perfil</h3>
+      </div>
+    </div>
+    <div class="col-md-5 col-sm-12 mx-auto">
+      <div class="mb-3">
+        <label for="imagen" class="form-label">Imagen</label>
+        <input type="file" class="form-control" id="nLetrado" 
+        name="imagen" formControlName="imagen" (change)="fileEvent($event)">
+        <div *ngIf="this.imagenes" class="text-center mt-3">
+          <img width="150" [src]="imagenes">
+        </div>
+        <div  class="letraPequenna" *ngIf="imagenForm?.hasError('required')
+        && imagenForm?.touched">
+        Imagen obligatoria
+      </div>
+      <div  class="letraPequenna" *ngIf="(!imagenForm?.value.includes('.jpg') &&
+          !imagenForm?.value.includes('.jpeg') && !imagenForm?.value.includes('.png'))
+          && imagenForm?.touched">
+            Solo se pueden introducir fotos en formato jpg,jpeg y png
+        </div>
+        <div  class="letraPequenna" *ngIf="this.maxSize">
+           La imagen no puede superar 2 megaBytes de tamaño
+        </div>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-md-4 mx-auto col-sm-12 mt-4">
+    <div class="d-grid gap-2">
+      <input type="submit" value="Enviar imagen" class="btn btn-outline-primary" [disabled]="this.formulario3.invalid">
+    </div>
+  </div>
+  </div>
+</form>
+<button id="btnModal">Abrir modal</button> 
+<div id="tvesModal" class="modalContainer">
+ <div class="modal-content">
+   <span class="close">×</span> <h2>AVISO</h2>
+   <p></p>
+</div>
+ </div> 
+</div>

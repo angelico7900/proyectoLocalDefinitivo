@@ -1,0 +1,44 @@
+<header class="container-fluid">
+<div class="row">
+    <div *ngIf="loginService.iniciado() != null" class="col-3 col-sm-4" id="ham">
+        <div class="respmenu">
+            <input type="checkbox">
+            <i class="fa fa-bars"></i>
+            <i class="fa fa-times"></i>
+            <nav id="hamburguesa">
+              <ul class="listaEstilo position-absolute">
+                <li><a routerLink="/perfil" class="bordeBajo fw-bold">Ver Perfil</a></li>
+                <li><a (click)="this.cerrarSesion()" href="#" class="bordeBajo fw-bold">Cerrar Sesión</a></li>
+                <li><a routerLink="/contactos" class="bordeBajo  fw-bold">Contratos</a></li>
+              </ul>
+            </nav>
+          </div>
+    </div>
+    <div class="col-3">
+        <div class="mt-2 titulo ajus-tam">
+            <a routerLink="">
+            <div class="fs-2 ms-2 texto-blanco">Lawandyer</div>
+            </a>
+        </div>
+    </div>
+    <div class="col-9" *ngIf="loginService.iniciado() == null">
+        <div class="row mt-3">
+            <div class="fs-6 col-12 fs-sm-4">
+                <div class="row me-3">
+                    <a class="col-6 texto-blanco text-center" routerLink='login'>Iniciar Sesión</a>
+                    <a class="col-6 texto-blanco text-center" routerLink='registro'>Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-9" *ngIf="loginService.iniciado() != null" id="user">
+        <div id="contenedorDatos">
+            <div class="ms-5" id="perfil"><a routerLink="/perfil" class="texto-blanco fw-bold fs-6">Ver Perfil</a></div>
+            <div class="" id="contactos"><a routerLink="/contactos" class="texto-blanco fw-bold fs-6">Ver contactos</a></div>
+            <div class="texto-blanco fw-bold fs-6" id="sesion" (click)="this.cerrarSesion()">Cerrar Sesión</div>
+            <div id="delCuenta"><a class="texto-blanco fw-bold fs-6"routerLink="/eliminar-cuenta">Eliminar cuenta</a></div>
+            <div class="limipar"></div>
+        </div>
+    </div>
+</div>
+</header>

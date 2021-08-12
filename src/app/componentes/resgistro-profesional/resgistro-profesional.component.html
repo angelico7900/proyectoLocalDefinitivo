@@ -1,0 +1,12 @@
+<div>
+    <app-header-account></app-header-account>
+    <app-body-resgistro-profesional
+    (registro)="registrarse($event)">
+</app-body-resgistro-profesional>
+    <div class="err text-center mb-3" [ngClass]="{'visible': !repetido}">
+            El correo ya está en uso
+    </div>
+    <app-footer-account></app-footer-account>
+</div>
+<script>
+</script>

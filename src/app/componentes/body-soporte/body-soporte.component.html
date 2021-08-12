@@ -1,0 +1,38 @@
+<div class="imagenB">
+    <div class="bannerA">
+        <h2>Formulario de contacto</h2>
+    </div>
+</div>
+
+<div class="container-fluid">
+        <div class="row mt-3">
+           
+            <div class="col-md-8 col-sm-12">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="this.nombre">
+            </div>
+            <div class="col-md-8 col-sm-12" id="apellidos">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" [(ngModel)]="this.apellidos">
+            </div>
+            <div class="col-md-8 col-sm-12" id="correo">
+                <label for="correo">Correo</label>
+                <input type="email" class="form-control" id="correo" [(ngModel)]="this.correo">
+            </div>
+            <div class="col-md-8 col-sm-12" id="asunto">
+                <label for="asunto">Asunto</label>
+                <textarea class="form-control" id="asunto" [(ngModel)]="this.asunto"></textarea>
+            </div>
+            <div class="col-md-8 col-sm-12 mt-3">
+                <div class="d-grid gap-2">
+                    <input type="button" value="Enviar consulta" class="btn btn-outline-primary" (click)="this.enviarAsunto()" [disabled]="this.vacios()">
+                </div>
+            </div>
+        </div>
+        <button id="btnModal">Abrir modal</button> 
+<div id="tvesModal" class="modalContainer">
+ <div class="modal-content">
+ <span class="close">×</span> <h2></h2>
+ <p>No hay abogados en esta ciudad</p> </div>
+ </div> 
+</div>

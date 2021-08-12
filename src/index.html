@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AbogadosAlAlcance</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    function bajar(){
+      setTimeout(function(){document.querySelector(".mensajeria").scroll(0,100000);
+      document.querySelector("textarea").value = "";},500);
+      let documentos = document.querySelector("#documentos");
+    let contactos = document.getElementById("abogadosHablados");
+    let altura = (contactos.offsetHeight - 410);
+    if(window.screen.width < 768){
+
+    }else{
+    documentos.style.marginTop = altura.toString() + "px";
+    }
+}
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>

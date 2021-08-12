@@ -1,0 +1,125 @@
+.container-fluid{
+    max-width: 90%;
+    margin: auto;
+    padding: 2em 1em 4em 1em;
+  }
+
+  .imagenB{
+    background-image: url(../../../assets/img/soporte.jpg);
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    overflow: hidden;
+    padding-bottom: 2em;
+    margin-bottom: 5em;
+
+}
+
+.imagenB::before{
+	content:'';
+	position: absolute;
+    top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+
+
+.bannerA{
+    max-width: 90%;
+    margin:0px auto;
+    position: absolute;
+    padding-bottom: 3em;
+    color: #fafafa;
+}
+
+.btn-outline-primary:disabled {
+    color: #38342e !important;
+    background-color: transparent;
+
+}
+
+.btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem rgba(37, 48, 66, 0.45);
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #b99d76;
+    outline: 0;
+    box-shadow: none;
+}
+
+.btn-outline-primary {
+    color: #b99d76 !important;
+    border-color: #b99d76;
+    margin: 1em;
+}
+
+.btn-outline-primary:hover {
+    color: #fafafa !important;
+    background-color: #b09d76 !important;
+    border-color: #b09d76 !important;
+}
+
+.col-md-8{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+}
+textarea{
+    height: 120px;
+    resize: none;
+}
+.container-fluid{
+    margin-bottom: 7%;
+}
+
+.modalContainer {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalContainer .modal-content {
+    background-color: #fafafa;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-top: 10px solid #B99D76;
+    width: 60%;
+}
+
+.modalContainer .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modalContainer .close:hover,
+.modalContainer .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+#btnModal{
+    display: none;
+}

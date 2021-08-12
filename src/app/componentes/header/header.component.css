@@ -1,0 +1,142 @@
+
+
+.titulo{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: bold;
+}
+
+.row{
+  padding-bottom: 0.5em;
+}
+.ajus-tam{
+    width: max-content;
+    height: max-content;
+}
+
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.texto-blanco{
+    color:#B99D76;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+
+.respmenu a{
+    margin: 0 auto;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    margin-left: -2rem;
+  }
+  .bordeBajo{
+      border-bottom:1px solid black;
+  }
+  .respmenu input[type="checkbox"], .respmenu .fa-bars, .respmenu .fa-times {
+    position: absolute;  
+    margin: 0;
+    padding: 0;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;  
+  }
+   
+  .respmenu .fa-bars, .respmenu .fa-times {
+    font-size: 48px;
+    pointer-events: none;
+  }
+   
+  .respmenu input[type="checkbox"] {
+    opacity: 0; 
+  }
+  ul{
+      color:black;
+      z-index: 100;
+  }
+   ul li a{
+    background-color: white;
+    padding: 20px;
+    padding-left: 4rem;
+    width: 200%;
+    text-align: right;
+    
+   }
+   ul li a:hover{
+     background-color: #dddddd;
+     transition: all 1s;
+   }
+  .respmenu {
+    color: white;
+  }
+   
+  .respmenu nav {
+  left: -9000px;
+  position: absolute;
+  }
+  .listaEstilo{
+      list-style: none;
+  }
+
+  .respmenu input:checked ~ nav {
+    left: 10px;
+    transition: all 1s;
+  }
+   
+  .respmenu input:checked ~ .fa-bars {
+    display: none;
+  }
+   
+  .respmenu input:not(:checked) ~ .fa-times {
+    display: none;
+  }
+  #hamburguesa ul{
+      margin-left: -0.8rem;
+      text-align: center;
+        width: max-content;
+  }
+  ul li{
+      margin: 0;
+  }
+  #user{
+    line-height: 56px;
+    margin: 0 auto;
+    display: block;
+    height: fit-content;
+  }
+  #perfil,#contactos,#sesion,#delCuenta{
+    float: left;
+  }
+  #contenedorDatos{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .limpiar{
+    clear: both;
+  }
+  #user a{
+    padding: 3px 20px 5px 20px;
+  }
+  #contenedorDatos > div{
+    cursor: pointer;
+  }
+  @media only screen and (min-width: 850px){
+    #ham{
+      display: none;
+    }
+    #user{
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 850px){
+    #ham{
+      display: block;
+    }
+    #user{
+      display: none;
+    }
+  }

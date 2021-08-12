@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+        <div *ngFor="let item of items | paginate: { itemsPerPage:1,currentPage:page }" class="col-12">
+            <label>Id</label>
+                <input  class="form-control" [(value)]="item.id">
+                <label>Nombre</label>
+                <input  class="form-control" [(value)]="item.nombre" [(ngModel)]="item.nombre">
+                <label>Apellidos</label>
+                <input class="form-control" [value]="item.apellidos" [(ngModel)]="item.apellidos">
+                <label>Correo</label>
+                <input class="form-control" [value]="item.correo" [(ngModel)]="item.correo">
+                <label>dni</label>
+                <input class="form-control" [value]="item.correo" [(ngModel)]="item.dni">
+                <label>número de letrado</label>
+                <input class="form-control" [value]="item.correo" [(ngModel)]="item.n_letrado">
+                <div class="d-grid gap-2">
+                    <input type="button" (click)="this.actualizarUsuario(item)" value="Actualizar usuario" class="mb-3 mt-3 btn btn-outline-primary">
+                    <input type="button" (click)="this.eliminarUsuario(item.correo)" value="Eliminar usuario" class="btn btn-outline-primary">
+                </div>
+        </div>
+        <div class="mx-auto text-center mt-5">
+            <pagination-controls (pageChange)="page = $event" 
+            previousLabel="Anterior"
+            nextLabel="Siguiente">
+            </pagination-controls>
+        </div>
+    </div>
+</div>
+
