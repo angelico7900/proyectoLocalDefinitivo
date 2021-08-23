@@ -17,6 +17,7 @@ export class ObtenerService {
   urlAbF : string = "http://localhost/api/obtenerAbogadoWhere.php"
   urlAbM : string = "http://localhost/api/obtenerAbogadoMoroso.php"
   urlClis : string = "http://localhost/api/obtenerClientes.php"
+  urlAbsM : string = "http://localhost/api/obtenerAbogadosMorosos.php"
   constructor(private http:HttpClient,private router:Router) { }
   obtenerAbogados():Observable<any>{
     return this.http.post(this.urlAbs,"");
@@ -59,6 +60,10 @@ export class ObtenerService {
       'correo' : datos
     }
     return this.http.post(this.urlAbM,JSON.stringify(json));
+  }
+  obtenerAbogadosMorosos(){
+
+    return this.http.post(this.urlAbsM,"");
   }
   obtenerClientes():Observable<any>{
     return this.http.post(this.urlClis,"");
