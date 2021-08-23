@@ -9,13 +9,10 @@
 <div class="container-fluid" *ngIf="this.aparecer">
     
     <div class="row">
-        <div class="col-md-4 borde m-1 max-h" id="abogadosHablados">
-                <div *ngFor="let item of usersUsados">
+        <div class="col-md-4  m-1 max-h" id="abogadosHablados">
+                <div *ngFor="let item of usersUsados;let impar = even;let par = odd;" [ngClass]="{'claro':par,'oscuro':impar}">
                     <div (click)="this.abrirChat(item)" onclick="bajar()" class="w-100">
-                        <hr>
                         <div class="float-left">{{item}}</div>
-                        <hr>
-                        <div class="limpiar"></div>
                     </div>
                 </div>
         </div>

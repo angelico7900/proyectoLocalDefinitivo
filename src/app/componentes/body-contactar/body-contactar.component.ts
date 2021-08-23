@@ -72,9 +72,12 @@ export class BodyContactarComponent implements OnInit {
     }
     this.subir.subirMensaje(objeto).subscribe(
       datos =>{
+        console.log(datos);
         if(datos.exito == 'OK'){
           this.clickarModal();
         }else{
+          let texto = document.querySelector('.modal-content p');
+          texto.innerHTML = "Ha ocurrido un error al enviar el mensaje, lamentamos las molestias";
           this.clickarModal();
         }
       }

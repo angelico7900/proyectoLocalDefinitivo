@@ -6,7 +6,20 @@ input[type="file"]{
     width: -webkit-fill-available;
     width: -moz-available;
 }
-
+#abogadosHablados .w-100{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color:#B99D76;
+}
+.claro{
+    background-color: #243040c2;
+}
+.oscuro{
+    background-color: #243040;
+}
+#abogadosHablados .float-left{
+    margin-left: 5%;
+}
 .container-fluid{
     margin-left: 2%;
     padding-top: 3em;
@@ -25,7 +38,6 @@ input[type="file"]{
     justify-content: center;
     height: 400px;
     overflow: hidden;
-
 }
 .imagenB::before{
 	content:'';
@@ -77,7 +89,6 @@ h3{
     background-color: #b09d76 !important;
     border-color: #b09d76 !important;
 }
-
 
 .modalContainer {
     display: none; 

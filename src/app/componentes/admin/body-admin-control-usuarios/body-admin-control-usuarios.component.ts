@@ -18,6 +18,7 @@ export class BodyAdminControlUsuariosComponent implements OnInit {
     this.obtenerClientes();
   }
   obtenerClientes(){
+    console.log("entra")
     this.obtener.obtenerClientes().subscribe(
       datos=>{
         console.log(datos);
