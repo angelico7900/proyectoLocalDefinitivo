@@ -20,6 +20,14 @@ export class BodyAdminControlMorososComponent implements OnInit {
     if(this.login.iniciadoAdmin() != 'admin'){
       this.router.navigate(['/admin']);
     }
+    this.obtener.obtenerAbogadosMorosos().subscribe(
+      datos =>{
+        console.log(datos);
+        if(datos.exito = 'OK'){
+          this.items = datos.abogados;
+        }
+      }
+    )
   }
 avisar(){
 

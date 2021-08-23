@@ -61,7 +61,7 @@ export class ObtenerService {
     }
     return this.http.post(this.urlAbM,JSON.stringify(json));
   }
-  obtenerAbogadosMorosos(){
+  obtenerAbogadosMorosos():Observable<any>{
 
     return this.http.post(this.urlAbsM,"");
   }
