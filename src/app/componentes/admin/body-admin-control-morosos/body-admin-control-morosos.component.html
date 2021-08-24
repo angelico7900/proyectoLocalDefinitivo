@@ -10,7 +10,7 @@
                 <label>Correo</label>
                 <input class="form-control" [value]="item.correo" [(ngModel)]="item.correo">
                 <div class="d-grid gap-2">
-                    <input type="button" (click)="this.avisar()" value="Actualizar usuario" class="mb-3 mt-3 btn btn-outline-primary">
+                    <input type="button" (click)="this.avisar(item.correo)" value="Advertir" class="mb-3 mt-3 btn btn-outline-primary">
                 </div>
         </div>
         <div class="mx-auto text-center mt-5">

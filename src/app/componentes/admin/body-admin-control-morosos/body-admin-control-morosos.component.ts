@@ -29,7 +29,17 @@ export class BodyAdminControlMorososComponent implements OnInit {
       }
     )
   }
-avisar(){
+avisar(correo){
+  this.obtener.obtenerAviso(correo).subscribe(
+    datos=>{
+      console.log(datos);
+      if(datos.exito == 'OK'){
+        alert("Aviso enviado correctamente");
+      }else{
+        alert("No se ha podido enviar el aviso");
+      }
+    }
+  )
 
 }
 }

@@ -8,16 +8,18 @@ import { Abogado } from 'src/app/Models/Abogado';
   providedIn: 'root'
 })
 export class ObtenerService {
-  urlAbs:string = "http://localhost/api/obtenerAbogados.php";
-  urlAb:string = "http://localhost/api/obtenerAbogado.php";
-  urlCasos:string = "http://localhost/api/obtenerCasos.php";
-  urlCli :string =  "http://localhost/api/obtenerCliente.php";
-  urlMen : string = "http://localhost/api/obtenerMensajes.php"
-  urlOp : string =  "http://localhost/api/obtenerOpiniones.php"
-  urlAbF : string = "http://localhost/api/obtenerAbogadoWhere.php"
-  urlAbM : string = "http://localhost/api/obtenerAbogadoMoroso.php"
-  urlClis : string = "http://localhost/api/obtenerClientes.php"
-  urlAbsM : string = "http://localhost/api/obtenerAbogadosMorosos.php"
+  url : string = "http://localhost/api";
+  urlAbs:string = this.url + "/obtenerAbogados.php";
+  urlAb:string = this.url + "/obtenerAbogado.php";
+  urlCasos:string = this.url + "/obtenerCasos.php";
+  urlCli :string =  this.url + "/obtenerCliente.php";
+  urlMen : string = this.url + "/obtenerMensajes.php"
+  urlOp : string =  this.url + "/obtenerOpiniones.php"
+  urlAbF : string = this.url + "/obtenerAbogadoWhere.php"
+  urlAbM : string = this.url + "/obtenerAbogadoMoroso.php"
+  urlClis : string = this.url + "/obtenerClientes.php"
+  urlAbsM : string = this.url + "/obtenerAbogadosMorosos.php"
+  urlAv : string = this.url + "/avisar.php";
   constructor(private http:HttpClient,private router:Router) { }
   obtenerAbogados():Observable<any>{
     return this.http.post(this.urlAbs,"");
@@ -67,5 +69,11 @@ export class ObtenerService {
   }
   obtenerClientes():Observable<any>{
     return this.http.post(this.urlClis,"");
+  }
+  obtenerAviso(correo):Observable<any>{
+    let json = {
+      'correo' : correo
+    }
+    return this.http.post(this.urlAv,json);
   }
 }
