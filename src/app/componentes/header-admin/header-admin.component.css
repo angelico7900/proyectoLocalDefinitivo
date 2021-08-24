@@ -1,0 +1,16 @@
+div{
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 300;
+}
+#body{
+    background-color: #131720;
+}
+a{
+    color:#B99D76;
+    font-weight: 300;
+}
+a:hover{
+    color: #F2F2F2;
+    
+}
+

@@ -47,6 +47,7 @@ import { AdminControlMorososComponent } from './componentes/admin/admin-control-
 import { BodyAdminControlMorososComponent } from './componentes/admin/body-admin-control-morosos/body-admin-control-morosos.component';
 import { BodyAdminControlUsuariosComponent } from './componentes/admin/body-admin-control-usuarios/body-admin-control-usuarios.component';
 import { BodyAdminControlAbogadosComponent } from './componentes/admin/body-admin-control-abogados/body-admin-control-abogados.component';
+import { HeaderAdminComponent } from './componentes/header-admin/header-admin.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { BodyAdminControlAbogadosComponent } from './componentes/admin/body-admi
     AdminControlMorososComponent,
     BodyAdminControlMorososComponent,
     BodyAdminControlUsuariosComponent,
-    BodyAdminControlAbogadosComponent
+    BodyAdminControlAbogadosComponent,
+    HeaderAdminComponent
   ],
   imports: [
     BrowserModule,
