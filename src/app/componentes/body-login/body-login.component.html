@@ -19,6 +19,11 @@
                                 <label for="correo" class="form-label">Correo Electrónico</label>
                                 <input type="email" class="form-control" id="correo" [(ngModel)]="this.usuario.correo" name="correo">
                             </div>
+                            <div class="mb-3" id="olvidarContra">
+                                <small class="form-text text-muted" (click)="olvidarContra()">
+                                    Ha olvidado su contraseña
+                                </small>
+                            </div>
                                 <div class="mb-3">
                                     <label for="contrasena" class="form-label">Contraseña</label>
                                     <div class="input-group">
@@ -38,7 +43,13 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6 col-12">
+            <div class="col-md-12 col-12 mt-5">
+                <div class="row">
+                    <div class="mb-3">
+                            <label for="correo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correoReset" name="correoReset">
+                    </div>
+                </div>
             </div>
         </div>
     </div>

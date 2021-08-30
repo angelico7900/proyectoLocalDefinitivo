@@ -35,6 +35,8 @@ export class BodyLoginComponent implements OnInit {
   }
   logearse(user:User){
     this.logeo.emit(user);
-
+  }
+  olvidarContra(){
+    let element : HTMLElement = document.querySelector("#olvidarContra") as HTMLElement;
   }
 }
