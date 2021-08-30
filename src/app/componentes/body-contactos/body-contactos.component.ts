@@ -36,9 +36,6 @@ export class BodyContactosComponent implements OnInit {
     private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
-    if(this.login.iniciado() == null){
-      this.router.navigate(['']);
-    }
     this.obtenerMensajes();
     const contador = interval(5000);
     contador.subscribe(() =>{

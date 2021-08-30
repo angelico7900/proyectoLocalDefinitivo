@@ -37,7 +37,7 @@ export class BodyAdminControlAbogadosComponent implements OnInit {
   }
   actualizarUsuario(item : any){
     console.log(item);
-    this.registro.subirClienteAdmin(item).subscribe(
+    this.registro.subirAbogadoAdmin(item).subscribe(
       datos=>{
         console.log(datos);
         if(datos.exito == 'OK'){

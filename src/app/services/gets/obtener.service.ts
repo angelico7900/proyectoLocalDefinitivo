@@ -74,6 +74,6 @@ export class ObtenerService {
     let json = {
       'correo' : correo
     }
-    return this.http.post(this.urlAv,json);
+    return this.http.post(this.urlAv,JSON.stringify(json));
   }
 }
