@@ -20,6 +20,7 @@ export class ObtenerService {
   urlClis : string = this.url + "/obtenerClientes.php"
   urlAbsM : string = this.url + "/obtenerAbogadosMorosos.php"
   urlAv : string = this.url + "/avisar.php";
+  urlResCon : string = this.url + "/recuperarContrasenna.php";
   constructor(private http:HttpClient,private router:Router) { }
   obtenerAbogados():Observable<any>{
     return this.http.post(this.urlAbs,"");
@@ -75,5 +76,11 @@ export class ObtenerService {
       'correo' : correo
     }
     return this.http.post(this.urlAv,JSON.stringify(json));
+  }
+  obtenerRecuperadorContrasenna(correo) : Observable<any>{
+    let json = {
+      'correo' : correo
+    }
+    return this.http.post(this.urlResCon,JSON.stringify(json));
   }
 }

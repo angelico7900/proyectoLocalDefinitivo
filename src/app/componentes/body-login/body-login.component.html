@@ -1,7 +1,7 @@
 <div id="body">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 col-12 mt-5">
+            <div class="col-md-12 col-12 mt-5" id="formLogin">
                 <div class="row">
                     <h1>Inicia sesión</h1>
                     <form action="" (ngSubmit)="logearse(this.usuario)" method="POST">
@@ -19,11 +19,6 @@
                                 <label for="correo" class="form-label">Correo Electrónico</label>
                                 <input type="email" class="form-control" id="correo" [(ngModel)]="this.usuario.correo" name="correo">
                             </div>
-                            <div class="mb-3" id="olvidarContra">
-                                <small class="form-text text-muted" (click)="olvidarContra()">
-                                    Ha olvidado su contraseña
-                                </small>
-                            </div>
                                 <div class="mb-3">
                                     <label for="contrasena" class="form-label">Contraseña</label>
                                     <div class="input-group">
@@ -32,6 +27,13 @@
                                             <button class="btn" (click)="cambioContra()" type="button"><i class="fa fa-eye-slash icon"></i></button>
                                         </div>
                                     </div>
+                                </div>
+                                <div class="mb-3" id="olvidarContra">
+                                    <a id="botonContra">
+                                        <small class="form-text text-muted" (click)="olvidarContra()">
+                                            Ha olvidado su contraseña
+                                        </small>
+                                    </a>
                                 </div>
                                 <div class="d-grid gap-2 mt-5 ff">
                                     <input type="submit" class="btn link-light fs-5" value="Iniciar sesión">
@@ -43,14 +45,25 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-12 col-12 mt-5">
+            <div class="col-md-12 col-12 mt-5" id="reset">
                 <div class="row">
-                    <div class="mb-3">
-                            <label for="correo" class="form-label">Correo Electrónico</label>
+                    <div class="col-md-6 col-12 text-center ms-auto me-auto">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label"[(ngModel)]="this.usuario.contrasena">Correo Electrónico</label>
                             <input type="email" class="form-control" id="correoReset" name="correoReset">
+                        </div>
+                        <div class="d-grid gap-2 mt-5 ff">
+                            <input type="submit" class="btn link-light fs-5" value="Recuperar contraseña" (click)="recuperarContra()">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<button id="btnModal">Abrir modal</button> 
+<div id="tvesModal" class="modalContainer">
+ <div class="modal-content">
+ <span class="close">×</span>
+ <p>Se ha enviado el mensaje correctamente</p> </div>
+ </div> 
