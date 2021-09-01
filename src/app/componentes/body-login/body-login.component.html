@@ -49,8 +49,8 @@
                 <div class="row">
                     <div class="col-md-6 col-12 text-center ms-auto me-auto">
                         <div class="mb-3">
-                            <label for="correo" class="form-label"[(ngModel)]="this.usuario.contrasena">Correo Electrónico</label>
-                            <input type="email" class="form-control" id="correoReset" name="correoReset">
+                            <label for="correo" class="form-label">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="correoReset" name="correoReset" [(ngModel)]="this.correoRecuperacion">
                         </div>
                         <div class="d-grid gap-2 mt-5 ff">
                             <input type="submit" class="btn link-light fs-5" value="Recuperar contraseña" (click)="recuperarContra()">

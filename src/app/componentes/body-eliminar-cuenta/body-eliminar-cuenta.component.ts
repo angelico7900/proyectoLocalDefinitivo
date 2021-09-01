@@ -13,7 +13,8 @@ export class BodyEliminarCuentaComponent implements OnInit {
   contra : string = "";
   contra2 : string = "";
   del : boolean = false;
-  constructor(private eliminar:EliminarService,private login:LoginServiceService) { }
+  constructor(private eliminar:EliminarService,private login:LoginServiceService,
+    private router:Router) { }
 
   ngOnInit(): void {
     this.aparecerModal();
@@ -34,6 +35,9 @@ export class BodyEliminarCuentaComponent implements OnInit {
         if(datos.exito == 'OK'){
           this.del = true;
           texto.innerHTML = "Cuenta eliminada";
+          this.clickarModal();
+          this.login.cerrarSesion();
+          this.router.navigate(['/']);
         }else if(datos.exito == 'ERR'){
           texto.innerHTML = "Error al eliminar la cuenta";
         }else if(datos.exito == 'FOUND'){

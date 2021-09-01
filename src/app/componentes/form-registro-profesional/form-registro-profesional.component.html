@@ -111,21 +111,13 @@
                    Solo se pueden introducir fotos en formato jpg,jpeg y png
                    </div>
                    <div  class="letraPequenna" *ngIf="this.maxSize">
-                   La imagen no puede superar 2 megaBytes de tamaño
+                   La imagen no puede superar 6 megaBytes de tamaño
                    </div>
                 </div>
               <div class="mb-3">
                     <label for="descripcion" class="form-label">Descripcion</label>
                     <textarea [(ngModel)]='this.usuario.descripcion' id="descripcion"
-                              class="form-control" name="descripcion" formControlName="descripcion"></textarea>    
-                    <!-- <div  class="letraPequenna" *ngIf="descripcionForm?.hasError('required')
-                    && descripcionForm?.touched">
-                       Descripcion obligatoria
-                   </div>
-                   <div  class="letraPequenna" *ngIf="descripcionForm?.hasError('minLength')
-                   && descripcionForm?.touched">
-                       Tiene que tener entre 250 y 500 caracteres
-                   </div> -->
+                              class="form-control" name="descripcion" formControlName="descripcion"></textarea>
                 </div>
                 <div class="mb-3">
                    <label for="provincia" class="form-label">Provincia</label> 

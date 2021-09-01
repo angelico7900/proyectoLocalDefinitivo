@@ -2,6 +2,7 @@ import { Component, OnInit, Output,Input } from '@angular/core';
 import { User } from 'src/app/Models/User';
 import {EventEmitter} from '@angular/core';
 import { ObtenerService } from 'src/app/services/gets/obtener.service';
+import { LoginServiceService } from 'src/app/services/login/login-service.service';
 
 @Component({
   selector: 'app-body-login',
@@ -12,7 +13,8 @@ export class BodyLoginComponent implements OnInit {
   usuario:User;
   @Input() msgErrorBody:boolean;
   @Output() logeo: EventEmitter<User> = new EventEmitter<User>();
-  constructor(private obtener : ObtenerService) {
+  correoRecuperacion : string;
+  constructor(private obtener : ObtenerService,private login:LoginServiceService) {
     this.usuario = new User();
    }
 
@@ -83,10 +85,11 @@ export class BodyLoginComponent implements OnInit {
     element2.style.display = "block";
   }
   recuperarContra(){
-    if(this.usuario.contrasena.length == 0){
+    console.log(this.correoRecuperacion);
+    if(this.usuario.correo.length == 0){
 
     }else{
-      this.obtener.obtenerRecuperadorContrasenna(this.usuario.contrasena).subscribe(
+      this.obtener.obtenerRecuperadorContrasenna(this.correoRecuperacion).subscribe(
         datos =>{
           console.log(datos);
           let element : HTMLElement = document.querySelector("#tvesModal p") as HTMLElement;
@@ -99,6 +102,5 @@ export class BodyLoginComponent implements OnInit {
         }
       )
     }
-  
   }
 }

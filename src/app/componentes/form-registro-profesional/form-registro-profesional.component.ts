@@ -102,7 +102,7 @@ export class FormRegistroProfesionalComponent implements OnInit {
   fileEvent(imagen:Event){
     this.file = (<HTMLInputElement>imagen.target).files[0];
     if(this.file.type == "image/png" || this.file.type == "image/jpg" || this.file.type == "image/jpeg"){
-      if(this.file.size > 2097152){
+      if(this.file.size > 6291456){
         this.maxSize = true;
         this.imagenForm?.setErrors({'incorrect':true})
       }else{
